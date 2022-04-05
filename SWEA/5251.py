@@ -1,3 +1,5 @@
+# 5251. 최소 이동 거리 2022-04-04
+
 T = int(input())
 for tc in range(1, T + 1):
     N, E = map(int, input().split())

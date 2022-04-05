@@ -60,6 +60,7 @@ def breaking(kk, N):  # kk는 구슬 횟수
             ans = 0
             return
 
+
 T = int(input())
 for tc in range(1, T + 1):
     N, W, H = map(int, input().split())

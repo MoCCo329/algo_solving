@@ -1,3 +1,5 @@
+# 5248. 그룹 나누기 2022-04-04
+
 T = int(input())
 for tc in range(1, T + 1):
     N, M = map(int, input().split())

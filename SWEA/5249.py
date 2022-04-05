@@ -1,3 +1,5 @@
+# 5249. 최소 신장 트리 2022-04-04
+
 T = int(input())
 for tc in range(1, T + 1):
     V, E = map(int, input().split())

@@ -1,3 +1,5 @@
+# 5250. 최소 비용 2022-04-04
+
 def bfs(si, sj):
     q = [(si, sj)]
     while q:
