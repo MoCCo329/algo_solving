@@ -26,7 +26,7 @@ dice = [[0] * 4 for _ in range(3)]  # 전개도를 왼쪽으로 눕힌 배열
 d_list = [0, [0, 1], [0, -1], [-1, 0], [1, 0]]
 
 for d in moves:
-    di, dj = d_list[d]
+    di, dj = d_list M[d]
     ni, nj = i + di, j + dj
     if 0 <= ni < N and 0 <= nj < M:
         move(d)
