@@ -32,6 +32,5 @@ def f(i, N):
             c_list[i], c_list[j] = c_list[j], c_list[i]
 
 f(0, N-1)
-ans.sort()
-print(ans[-1])
-print(ans[0])
+print(max(ans))
+print(min(ans))
