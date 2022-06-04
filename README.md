@@ -1,9 +1,5 @@
-커밋은 "문제번호 난이도"로
+## Commit Convention
 
-수정시 "문제번호 난이도 re1", "문제번호 난이도 re2"...
-
-
-
-- 할 일
-
-beakjoon, swea 난이도별로 나누기
+- BEAKJOON 의 경우 "문제번호 문제난이도" ex) "1001 G1"
+- SWEA 의 경우 "문제번호" ex) "1001"
+- programers 의 경우 "문제이름" ex) "프렌즈4블록"
