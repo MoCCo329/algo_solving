@@ -1,4 +1,4 @@
-## Commit Convention
+## Commit Convention (22-06-05~)
 
 - BEAKJOON 의 경우 "문제번호 문제난이도" ex) "1001 G1"
 - SWEA 의 경우 "문제번호" ex) "1001"
