@@ -1,3 +1,6 @@
+# 가장 큰 정사각형 찾기  2022-07-24
+
+
 def solution(board):
     N = len(board)
     M = len(board[0])
