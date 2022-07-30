@@ -31,6 +31,7 @@ for i in range(N):
         if arr[i][j]:
             available.append((i + j, - j + i + 3 * N - 2))
 
+available.sort()
 ans = 1
 dfs(0, len(available), 0)
 print(ans)
