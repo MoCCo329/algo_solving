@@ -8,7 +8,7 @@ def find(a):
     return uf[a]
 
 
-def union(a, b):  # b의 자식에 a추가
+def union(a, b):
     global ans
 
     a, b = find(a), find(b)
