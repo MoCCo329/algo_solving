@@ -1,3 +1,6 @@
+# 성격 유형 검사하기 2022 KAKAO TECH INTERNSHIP  2022-09-05
+
+
 def solution(survey, choices):
     char_sum = {'R': 0, 'T': 0, 'C': 0, 'F': 0, 'J': 0, 'M': 0, 'A': 0, 'N': 0}
     char_type = [['R', 'T'], ['C', 'F'], ['J', 'M'], ['A', 'N']]
