@@ -4,7 +4,7 @@
 from collections import deque
 
 
-def get_level_dfs():
+def get_level_bfs():
     idx = -1
     for i in range(N):
         if i == parents[i]:
