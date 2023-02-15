@@ -7,7 +7,7 @@ import heapq
 N = int(input())
 M = int(input())
 
-adj_list = [[] for _ in range(M)]
+adj_list = [[] for _ in range(N)]
 for _ in range(M):
     a, b, w = map(int, input().split())
     adj_list[a - 1].append((b - 1, w))
