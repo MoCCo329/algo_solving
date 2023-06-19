@@ -1,42 +1,57 @@
 # 10217. KCM Travel  2023-04-05
 
 
-import heapq, sys
+import sys
+from collections import deque
 input = sys.stdin.readline
 
 
-T = int(input())
-for tc in range(1, T + 1):
-    V, M, E = map(int, input().split())
+def update_query(i, j, v):
+    j += 1
+    while j < M + 2:
+        dp[i][j] = min(dp[i][j], v)
+        j += j & -j
 
-    adj_list = [[] for _ in range(V)]
-    for _ in range(E):
-        u, v, c, t = map(int, input().split())
-        adj_list[u - 1].append((v - 1, c, t))
 
-    INF = 10000001
-    dp = [[INF] * (M + 1) for _ in range(V)]
+def get_query(i, j):
+    j += 1
+    temp = INF
+    while 0 < j:
+        temp = min(temp, dp[i][j])
+        j &= j - 1
+    return temp
 
-    hq = [(0, 0, 0)]
-    for i in range(M + 1):
-        dp[0][i] = 0
-    while hq:
-        t, i, c = heapq.heappop(hq)
-        if dp[i][c] != t: continue
 
-        for j, nc, nt in adj_list[i]:
-            new_c = c + nc
-            new_t = t + nt
-            if new_c > M: continue
+int(input())
+V, M, E = map(int, input().split())
 
-            if dp[j][new_c] > new_t:
-                for k in range(new_c, M + 1):
-                    if dp[j][k] <= new_t: break
-                    dp[j][k] = new_t
-                heapq.heappush(hq, (new_t, j, new_c))
+adj_list = [[] for _ in range(V)]
+for _ in range(E):
+    u, v, c, t = map(int, input().split())
+    if v == 1: continue
+    adj_list[u - 1].append((v - 1, c, t))
 
-    ans = min(dp[V - 1])
-    if ans == INF:
-        print("Poor KCM")
-    else:
-        print(ans)
+INF = 10000001
+dp = [[INF] * (M + 2) for _ in range(V)]
+
+q = deque()
+q.append((0, 0, 0))
+update_query(0, 0, 0)
+while q:
+    t, i, c = q.popleft()
+    if get_query(i, c) < t: continue
+
+    for j, nc, nt in adj_list[i]:
+        new_c = c + nc
+        new_t = t + nt
+        if new_c > M: continue
+
+        if get_query(j, new_c) > new_t:
+            update_query(j, new_c, new_t)
+            q.append((new_t, j, new_c))
+
+ans = get_query(V - 1, M)
+if ans == INF:
+    print("Poor KCM")
+else:
+    print(ans)
